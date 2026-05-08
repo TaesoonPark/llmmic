@@ -1,5 +1,20 @@
 # llmmic
 
+## One-shot setup
+
+Windows PowerShell에서 아래 명령 하나로 venv, Python dependencies, `.env`, MeloTTS Docker image/container를 준비할 수 있습니다.
+
+```powershell
+cd C:\llmmic
+.\setup.ps1
+```
+
+검증 스크립트까지 같이 실행하려면 다음 옵션을 사용합니다.
+
+```powershell
+.\setup.ps1 -RunSmokeTests
+```
+
 로컬 OpenAI-compatible LLM 서버와 브라우저 마이크를 연결하는 한국어 음성 대화 MVP입니다.
 
 ## 구성
