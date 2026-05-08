@@ -29,6 +29,22 @@ chmod +x ./setup.sh
 ./setup.sh --run-smoke-tests
 ```
 
+## Run scripts
+
+Windows:
+
+```powershell
+.\run.ps1
+```
+
+macOS:
+
+```bash
+./run.sh
+```
+
+기본 실행 주소는 `http://127.0.0.1:8000`입니다. 다른 포트가 필요하면 Windows는 `.\run.ps1 -Port 8010`, macOS는 `./run.sh --port 8010`처럼 실행합니다.
+
 로컬 OpenAI-compatible LLM 서버와 브라우저 마이크를 연결하는 한국어 음성 대화 MVP입니다.
 
 ## 구성
