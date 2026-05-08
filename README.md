@@ -6,13 +6,13 @@ Windows PowerShell에서 아래 명령 하나로 venv, Python dependencies, `.en
 
 ```powershell
 cd C:\llmmic
-.\setup.ps1
+.\setup.cmd
 ```
 
 검증 스크립트까지 같이 실행하려면 다음 옵션을 사용합니다.
 
 ```powershell
-.\setup.ps1 -RunSmokeTests
+.\setup.cmd -RunSmokeTests
 ```
 
 macOS에서는 아래 스크립트를 사용합니다. Docker Desktop이 실행 중이어야 합니다.
@@ -34,7 +34,7 @@ chmod +x ./setup.sh
 Windows:
 
 ```powershell
-.\run.ps1
+.\run.cmd
 ```
 
 macOS:
@@ -43,7 +43,7 @@ macOS:
 ./run.sh
 ```
 
-기본 실행 주소는 `http://127.0.0.1:8000`입니다. 다른 포트가 필요하면 Windows는 `.\run.ps1 -Port 8010`, macOS는 `./run.sh --port 8010`처럼 실행합니다.
+기본 실행 주소는 `http://127.0.0.1:8000`입니다. 다른 포트가 필요하면 Windows는 `.\run.cmd -Port 8010`, macOS는 `./run.sh --port 8010`처럼 실행합니다.
 
 로컬 OpenAI-compatible LLM 서버와 브라우저 마이크를 연결하는 한국어 음성 대화 MVP입니다.
 

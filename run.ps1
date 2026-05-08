@@ -13,7 +13,7 @@ $ErrorActionPreference = "Stop"
 
 if ($Help) {
     @"
-Usage: .\run.ps1 [options] [-- extra uvicorn args]
+Usage: .\run.cmd [options] [-- extra uvicorn args]
 
 Options:
   -AppHost HOST    Host to bind, default: 127.0.0.1
@@ -22,8 +22,8 @@ Options:
   -Help            Show this help
 
 Examples:
-  .\run.ps1
-  .\run.ps1 -Port 8010 -Reload
+  .\run.cmd
+  .\run.cmd -Port 8010 -Reload
 "@ | Write-Host
     exit 0
 }
