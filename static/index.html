@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>llmmic</title>
+    <link rel="stylesheet" href="/static/styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <div class="main-column">
+        <section class="topbar">
+          <div>
+            <h1>llmmic</h1>
+            <p id="healthText">checking runtime...</p>
+          </div>
+          <div class="controls">
+            <button id="startButton" type="button">Start</button>
+            <button id="interruptButton" type="button" disabled>Interrupt</button>
+            <button id="resetButton" type="button">Reset</button>
+            <button id="stopButton" type="button" disabled>Stop</button>
+          </div>
+        </section>
+
+        <section class="status-grid">
+          <div class="status-cell">
+            <span>State</span>
+            <strong id="stateText">IDLE</strong>
+          </div>
+          <div class="status-cell">
+            <span>Mic</span>
+            <strong id="micText">closed</strong>
+          </div>
+          <div class="status-cell">
+            <span>Playback</span>
+            <strong id="playbackText">idle</strong>
+          </div>
+        </section>
+
+        <section class="conversation" id="conversation"></section>
+      </div>
+
+      <aside class="settings-panel" aria-label="Settings">
+        <h2>Settings</h2>
+
+        <div class="field">
+          <div class="field-row">
+            <label for="bargeThreshold">Barge-in threshold</label>
+            <output id="thresholdValue" for="bargeThreshold">0.025</output>
+          </div>
+          <input
+            id="bargeThreshold"
+            type="range"
+            min="0.005"
+            max="0.08"
+            step="0.001"
+            value="0.025"
+          />
+        </div>
+
+        <div class="field">
+          <label for="voiceSelect">Voice</label>
+          <select id="voiceSelect"></select>
+        </div>
+
+        <div class="field">
+          <div class="field-row">
+            <label for="speechSpeed">Speech speed</label>
+            <output id="speedValue" for="speechSpeed">1.00x</output>
+          </div>
+          <input
+            id="speechSpeed"
+            type="range"
+            min="0.5"
+            max="2.0"
+            step="0.05"
+            value="1.0"
+          />
+        </div>
+
+        <div class="field">
+          <div class="field-row">
+            <label for="ttsChunkChars">TTS chunk chars</label>
+            <output id="chunkCharsValue" for="ttsChunkChars">45 chars</output>
+          </div>
+          <input
+            id="ttsChunkChars"
+            type="range"
+            min="20"
+            max="120"
+            step="5"
+            value="45"
+          />
+        </div>
+
+        <div class="field">
+          <label for="rpPrompt">RP prompt</label>
+          <textarea id="rpPrompt" rows="14" spellcheck="false"></textarea>
+        </div>
+
+        <button id="applySettingsButton" type="button">Apply</button>
+        <p id="settingsStatus" class="settings-status">idle</p>
+      </aside>
+    </main>
+
+    <script src="/static/main.js?v=10" defer></script>
+  </body>
+</html>
