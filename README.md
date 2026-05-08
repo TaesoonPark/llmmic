@@ -15,6 +15,20 @@ cd C:\llmmic
 .\setup.ps1 -RunSmokeTests
 ```
 
+macOS에서는 아래 스크립트를 사용합니다. Docker Desktop이 실행 중이어야 합니다.
+
+```bash
+cd /path/to/llmmic
+chmod +x ./setup.sh
+./setup.sh
+```
+
+검증 스크립트까지 같이 실행하려면 다음 옵션을 사용합니다.
+
+```bash
+./setup.sh --run-smoke-tests
+```
+
 로컬 OpenAI-compatible LLM 서버와 브라우저 마이크를 연결하는 한국어 음성 대화 MVP입니다.
 
 ## 구성
